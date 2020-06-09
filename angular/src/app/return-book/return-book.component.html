@@ -1,0 +1,24 @@
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+<div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+<div class="container mt-4">
+    <table class="table table-hover table-bordered ">
+        <thead class="thead-dark">
+            <tr align="center">
+                <th>Return Id</th>
+                <th>User Id</th>
+                <th>Book Id</th>
+                <th>Book Name</th>
+                <th>Return</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let bookDetails of borrowedBooks' align='center'>
+                <td>{{bookDetails.id}}</td>
+                <td>{{bookDetails.bookId}}</td>
+                <td>{{bookDetails.userId}}</td>
+                <td>{{bookDetails.bookName}}</td>
+                <td><button class='btn btn-primary' style='width: 100%;' (click)='bookReturn(bookDetails)'>Return</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
